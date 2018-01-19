@@ -186,7 +186,8 @@
           },
           error: function(err) {
             $('#image-loader').fadeOut();
-            $('#message-warning').html(msg);
+            console.log(err);
+            $('#message-warning').html(err);
             $('#message-warning').fadeIn();
           },         
           contentType: "application/json"
