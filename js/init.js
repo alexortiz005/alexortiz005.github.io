@@ -171,6 +171,9 @@
 
 
       $.ajax({
+          headers: {          
+            Accept: "application/json; charset=utf-8"
+          },     
           url: "https://formspree.io/eaortiz@unal.edu.co",
           method: "POST",
           data: {message: "hello!"},
