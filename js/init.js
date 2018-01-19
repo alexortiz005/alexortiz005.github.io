@@ -187,7 +187,7 @@
           error: function(err,textStatus) {
             $('#image-loader').fadeOut();
             console.log(err);
-            $('#message-warning').html("<strong>Error</strong> "textStatus);
+            $('#message-warning').html("<strong>Error</strong> "+textStatus);
             $('#message-warning').fadeIn();
           },         
           contentType: "application/json"
