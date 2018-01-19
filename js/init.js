@@ -168,8 +168,15 @@
 ------------------------------------------------------*/
 
    $('form#contactForm button.submit').click(function() {
+    $.ajax({
+    url: "https://formspree.io/you@email.com",
+    method: "POST",
+    data: {message: "hello!"},
+    dataType: "json"
+});
 
 
+      /*
       $.ajax({
           headers: {          
             Accept: "application/json; charset=utf-8"
@@ -195,6 +202,7 @@
           },         
           contentType: "application/json"
       });
+      */
       /*
 
       var contactName = $('#contactForm #contactName').val();
