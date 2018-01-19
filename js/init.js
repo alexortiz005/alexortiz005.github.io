@@ -167,87 +167,30 @@
 /*	contact form
 ------------------------------------------------------*/
 
-   $('form#contactForm button.submit').click(function() {
-    $.ajax({
-    url: "https://formspree.io/eaortiz@unal.edu.co",
-    method: "POST",
-    data: {message: "hello!"},
-    dataType: "json",
-    beforeSend: function() {
-      $('#image-loader').fadeIn();
-    },
-    success: function(data) {
-      $('#image-loader').fadeOut();
-      $('#message-warning').hide();
-      $('#contactForm').fadeOut();
-      $('#message-success').fadeIn();   
-    },
-    error: function(err,textStatus) {
-      $('#image-loader').fadeOut();
-      console.log(err);
-      $('#message-warning').html("<strong>Error</strong> "+textStatus);
-      $('#message-warning').fadeIn();
-    },     
-});
+    $('form#contactForm button.submit').click(function() {
+        $.ajax({
+            url: "https://formspree.io/eaortiz@unal.edu.co",
+            method: "POST",
+            data: $('#contactForm').serialize(),
+            dataType: "json",
+            beforeSend: function() {
+              $('#image-loader').fadeIn();
+            },
+            success: function(data) {
+              $('#image-loader').fadeOut();
+              $('#message-warning').hide();
+              $('#contactForm').fadeOut();
+              $('#message-success').fadeIn();   
+            },
+            error: function(err,textStatus) {
+              $('#image-loader').fadeOut();
+              $('#message-warning').html("<strong>Error</strong> "+textStatus);
+              $('#message-warning').fadeIn();
+            },     
+        });
 
-
-      /*
-      $.ajax({
-          headers: {          
-            Accept: "application/json; charset=utf-8"
-          },     
-          url: "https://formspree.io/eaortiz@unal.edu.co",
-          method: "POST",
-          data: {message: "hello!"},
-          dataType: "json",
-          beforeSend: function() {
-            $('#image-loader').fadeIn();
-          },
-          success: function(data) {
-            $('#image-loader').fadeOut();
-            $('#message-warning').hide();
-            $('#contactForm').fadeOut();
-            $('#message-success').fadeIn();   
-          },
-          error: function(err,textStatus) {
-            $('#image-loader').fadeOut();
-            console.log(err);
-            $('#message-warning').html("<strong>Error</strong> "+textStatus);
-            $('#message-warning').fadeIn();
-          },         
-          contentType: "application/json"
-      });
-      */
-      /*
-
-      var contactName = $('#contactForm #contactName').val();
-      var contactEmail = $('#contactForm #contactEmail').val();
-      var contactSubject = $('#contactForm #contactSubject').val();
-      var contactMessage = $('#contactForm #contactMessage').val();
-
-      var data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
-               '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage;
-
-      $.ajax({
-
-        type: "POST",
-        url: "inc/sendEmail.php",
-        data: data,
-        success: function(msg) {
-
-            // Message was sent
-            if (msg == 'OK') {
-            }
-            // There was an error
-            else {
-            }
-
-	      }
-
-      });
-      */
       return false;
-   });
+    });
 
 
 });
