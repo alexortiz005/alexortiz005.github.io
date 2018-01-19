@@ -48,7 +48,7 @@
             <li><a class="smoothscroll" href="#about">Sobre Mí</a></li>
 	         <li><a class="smoothscroll" href="#resume">Curriculum</a></li>
             <li><a class="smoothscroll" href="#portfolio">Trabajos</a></li>
-            <li><a class="smoothscroll" href="#testimonials">Slider de repente</a></li>
+            <li><a class="smoothscroll" href="#testimonials">Citas</a></li>
             <li><a class="smoothscroll" href="#contact">Contacto</a></li>
             <li><a href="index-en.html">English</a></li>
          </ul> <!-- end #nav -->
@@ -659,15 +659,14 @@ Economicas - Universidad Nacional</h3>
 
             <div class="two columns header-col">
 
-               <h1><span>Get In Touch.</span></h1>
+               <h1><span>Póngase en contacto</span></h1>
 
             </div>
 
             <div class="ten columns">
 
-                  <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                  eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-                  voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                  <p class="lead">No lo piense mas, contacteme y obtenga información de mi trabajo, cotizaciones o resuelva inquietudes;
+                   su solicitud sera atendida los mas pronto posible y con la mejor actitud. Haga clic ahora mismo en enviar
                   </p>
 
             </div>
@@ -679,31 +678,33 @@ Economicas - Universidad Nacional</h3>
             <div class="eight columns">
 
                <!-- form -->
-               <form action="" method="post" id="contactForm" name="contactForm">
+               <form action="http://formspree.io/eaortiz@unal.edu.co" method="POST" id="contactForm" name="contactForm">
 					<fieldset>
 
+                  <input type="hidden" name="_gotcha">
+
                   <div>
-						   <label for="contactName">Name <span class="required">*</span></label>
-						   <input type="text" value="" size="35" id="contactName" name="contactName">
+						   <label for="contactName">Nombre <span class="required">*</span></label>
+						   <input type="text" value="" size="35" id="contactName" name="name">
                   </div>
 
                   <div>
 						   <label for="contactEmail">Email <span class="required">*</span></label>
-						   <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
+						   <input type="email" value="" size="35" id="contactEmail" name="_replyto">
                   </div>
 
                   <div>
-						   <label for="contactSubject">Subject</label>
-						   <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
+						   <label for="contactSubject">Asunto</label>
+						   <input type="text" value="" size="35" id="contactSubject" name="_subject">
                   </div>
 
                   <div>
-                     <label for="contactMessage">Message <span class="required">*</span></label>
-                     <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+                     <label for="contactMessage">Mensaje <span class="required">*</span></label>
+                     <textarea cols="50" rows="15" id="contactMessage" name="body"></textarea>
                   </div>
 
                   <div>
-                     <button class="submit">Submit</button>
+                     <button class="submit">Enviar</button>
                      <span id="image-loader">
                         <img alt="" src="images/loader.gif">
                      </span>

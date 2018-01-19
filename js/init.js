@@ -169,7 +169,29 @@
 
    $('form#contactForm button.submit').click(function() {
 
-      $('#image-loader').fadeIn();
+
+      $.ajax({
+          url: "https://formspree.io/eaortiz@unal.edu.co",
+          method: "POST",
+          data: {message: "hello!"},
+          dataType: "json",
+          beforeSend: function() {
+            $('#image-loader').fadeIn();
+          },
+          success: function(data) {
+            $('#image-loader').fadeOut();
+            $('#message-warning').hide();
+            $('#contactForm').fadeOut();
+            $('#message-success').fadeIn();   
+          },
+          error: function(err) {
+            $('#image-loader').fadeOut();
+            $('#message-warning').html(msg);
+            $('#message-warning').fadeIn();
+          },         
+          contentType: "application/json"
+      });
+      /*
 
       var contactName = $('#contactForm #contactName').val();
       var contactEmail = $('#contactForm #contactEmail').val();
@@ -181,28 +203,22 @@
 
       $.ajax({
 
-	      type: "POST",
-	      url: "inc/sendEmail.php",
-	      data: data,
-	      success: function(msg) {
+        type: "POST",
+        url: "inc/sendEmail.php",
+        data: data,
+        success: function(msg) {
 
             // Message was sent
             if (msg == 'OK') {
-               $('#image-loader').fadeOut();
-               $('#message-warning').hide();
-               $('#contactForm').fadeOut();
-               $('#message-success').fadeIn();   
             }
             // There was an error
             else {
-               $('#image-loader').fadeOut();
-               $('#message-warning').html(msg);
-	            $('#message-warning').fadeIn();
             }
 
 	      }
 
       });
+      */
       return false;
    });
 
