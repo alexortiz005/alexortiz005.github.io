@@ -169,10 +169,25 @@
 
    $('form#contactForm button.submit').click(function() {
     $.ajax({
-    url: "https://formspree.io/you@email.com",
+    url: "https://formspree.io/eaortiz@unal.edu.co",
     method: "POST",
     data: {message: "hello!"},
-    dataType: "json"
+    dataType: "json",
+    beforeSend: function() {
+      $('#image-loader').fadeIn();
+    },
+    success: function(data) {
+      $('#image-loader').fadeOut();
+      $('#message-warning').hide();
+      $('#contactForm').fadeOut();
+      $('#message-success').fadeIn();   
+    },
+    error: function(err,textStatus) {
+      $('#image-loader').fadeOut();
+      console.log(err);
+      $('#message-warning').html("<strong>Error</strong> "+textStatus);
+      $('#message-warning').fadeIn();
+    },     
 });
 
 
