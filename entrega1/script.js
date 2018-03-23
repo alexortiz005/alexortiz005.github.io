@@ -2,6 +2,8 @@
 function redraw(){
 
 	axioma=$("#axioma").val()
+	
+	paso=$("#paso").val()
 
 	const expresion = new Expresion(axioma)
 
@@ -26,7 +28,7 @@ function redraw(){
 		expresion.addRegla(arg,prod)
 	});
 
-	kook=expresion.expandir(N)
+	expresion.expandir(N)
 
 	result= expresion.contenido
 

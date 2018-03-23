@@ -11,6 +11,8 @@ var var_angulo;
 
 var result;
 
+var paso=10;
+
 var s = function(p) {
 	var turtles_path = [];
 	var pathPointer = 0;
@@ -49,7 +51,7 @@ var s = function(p) {
 			stack.forEach(function(element) {
 				switch(element){
 					case 'F':
-						turtle.forward(8)
+						turtle.forward(paso)
 						break;
 					case '+':
 						turtle.left(angulo)
