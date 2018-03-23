@@ -49,7 +49,7 @@ var s = function(p) {
 			stack.forEach(function(element) {
 				switch(element){
 					case 'F':
-						turtle.forward(5)
+						turtle.forward(8)
 						break;
 					case '+':
 						turtle.left(angulo)

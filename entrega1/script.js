@@ -26,7 +26,9 @@ function redraw(){
 		expresion.addRegla(arg,prod)
 	});
 
-	result= expresion.expandirse(N)
+	kook=expresion.expandir(N)
+
+	result= expresion.contenido
 
 
 	if (Pjs) {
